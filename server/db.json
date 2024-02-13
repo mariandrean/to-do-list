@@ -1,8 +1,12 @@
 {
-    "to-dos": [
+    "todos": [
         {
             "name": "lavar la ropa",
             "id": "1"
+        },
+        {
+            "name": "limpiar la cocina",
+            "id": "2"
         }
     ]
 }
