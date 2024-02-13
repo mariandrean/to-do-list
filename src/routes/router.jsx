@@ -2,19 +2,21 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact"
 import About from "../pages/About/About.jsx"
+import { getToDoList } from "../services/todos-sevices.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
+    loader: getToDoList,
   },
   {
     path: "/contact",
-    element: <Contact/>,
+    element: <Contact />,
   },
   {
     path: "/about",
-    element: <About/>,
+    element: <About />,
   }
 ]);
 
