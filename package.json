@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 8001",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "api": "npx json-server server/db.json"
+    "api": "npx json-server server/db.json --port 8000"
   },
   "dependencies": {
     "json-server": "^1.0.0-alpha.23",

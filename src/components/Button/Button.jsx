@@ -1,8 +1,11 @@
 import "./Button";
 
-function Button() {
+function Button({onClick, children}) {
+    
     return (
-        <button className="button">Button</button>
+        <button className="button" onClick={onClick}>
+            {children}
+        </button>
     )
 }
 
