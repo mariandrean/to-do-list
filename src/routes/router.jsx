@@ -3,6 +3,7 @@ import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact"
 import About from "../pages/About/About.jsx"
 import { getToDoList } from "../services/todos-sevices.js";
+import Create from "../pages/Create/Create.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/create",
+    element: <Create />,
   }
 ]);
 

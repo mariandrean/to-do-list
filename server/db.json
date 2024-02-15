@@ -1,12 +1,16 @@
 {
-    "todos": [
-        {
-            "name": "lavar la ropa",
-            "id": "1"
-        },
-        {
-            "name": "limpiar la cocina",
-            "id": "2"
-        }
-    ]
+  "todos": [
+    {
+      "name": "Lavar la ropa",
+      "id": "1"
+    },
+    {
+      "name": "Limpiar la cocina",
+      "id": "2"
+    },
+    {
+      "id": "d3d1",
+      "name": "Barrer"
+    }
+  ]
 }

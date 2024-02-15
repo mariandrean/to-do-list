@@ -18,8 +18,18 @@ export const deleteToDo = async (id) => {
 
 // Petición POST
 
-const createToDo = () => {
+export const createToDo = async (newTask) => {
+    alert(`Agregando ${newTask.name}`)
+    const response = await fetch('http://localhost:8000/todos', { 
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: `{
+            "name": "${newTask.name}"
+        }`
+    });
 
+    const data = await response.json();
+    return data;
 }
 
 // Petición PUT

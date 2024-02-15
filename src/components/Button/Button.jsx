@@ -1,9 +1,9 @@
 import "./Button";
 
-function Button({onClick, children}) {
+function Button({onClick, children, type}) {
     
     return (
-        <button className="button" onClick={onClick}>
+        <button type={type} className="button" onClick={onClick}>
             {children}
         </button>
     )
