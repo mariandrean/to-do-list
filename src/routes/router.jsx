@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact"
 import About from "../pages/About/About.jsx"
@@ -9,25 +9,31 @@ import Edit from "../pages/Edit/Edit.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-    loader: getToDoList,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/add",
-    element: <Add />,
-  },
-  {
-    path: "/edit/:id",
-    element: <Edit />,
-  }
+    element: <><h1>Mi lista de tareas</h1><Outlet/></>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: getToDoList,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/add",
+        element: <Add />,
+      },
+      {
+        path: "/edit/:id",
+        element: <Edit />,
+      }
+    ]
+  }  
 ]);
 
 export default router;
