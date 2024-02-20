@@ -12,7 +12,7 @@ function Home() {
     return(
         <>
             <h1>Mi lista de tareas</h1>
-            <a href="/create"><Button>Agregar nueva tarea</Button></a>
+            <a href="/add"><Button>Agregar nueva tarea</Button></a>
             <ul>{tasks.map(task => (
                     <Card key={task.id} toDo={task}/>
             ))}</ul>

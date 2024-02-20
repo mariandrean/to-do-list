@@ -3,7 +3,8 @@ import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact"
 import About from "../pages/About/About.jsx"
 import { getToDoList } from "../services/todos-sevices.js";
-import Create from "../pages/Create/Create.jsx";
+import Add from "../pages/Add/Add.jsx";
+import Edit from "../pages/Edit/Edit.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,12 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/create",
-    element: <Create />,
+    path: "/add",
+    element: <Add />,
+  },
+  {
+    path: "/edit/:id",
+    element: <Edit />,
   }
 ]);
 

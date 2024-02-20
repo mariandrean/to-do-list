@@ -6,9 +6,15 @@ export const getToDoList = async () => {
     return data;
 }
 
+export const getTaskById = async (id) => {
+    const response = await fetch(`http://localhost:8000/todos/${id}`);
+    const data = await response.json();
+    return data;
+}
+
 // Petición DELETE
 
-export const deleteToDo = async (id) => {
+export const deleteTask = async (id) => {
     if(confirm("¿Estás seguro que quieres eliminar?") === true){
         const result = await fetch(`http://localhost:8000/todos/${id}`, { method: "DELETE" });
         return result;
@@ -18,22 +24,24 @@ export const deleteToDo = async (id) => {
 
 // Petición POST
 
-export const createToDo = async (newTask) => {
-    alert(`Agregando ${newTask.name}`)
+export const createTask = async (newTask) => {
     const response = await fetch('http://localhost:8000/todos', { 
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: `{
-            "name": "${newTask.name}"
-        }`
+        body: JSON.stringify(newTask)
     });
-
     const data = await response.json();
     return data;
 }
 
 // Petición PUT
 
-const updateToDo = () => {
-
+export const updateTask = async (id, modifiedTask) => {
+    const response = await fetch(`http://localhost:8000/todos/${id}`, { 
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(modifiedTask)
+    });
+    const data = await response.json();
+    return data;
 }
