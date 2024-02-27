@@ -1,15 +1,16 @@
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact"
 import About from "../pages/About/About.jsx"
 import { getToDoList } from "../services/todos-sevices.js";
 import Add from "../pages/Add/Add.jsx";
 import Edit from "../pages/Edit/Edit.jsx";
+import Nav from "../components/Nav/Nav.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <><h1>Mi lista de tareas</h1><Outlet/></>,
+    element: <Nav/>,
     children: [
       {
         path: "/",

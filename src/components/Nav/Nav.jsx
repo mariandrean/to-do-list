@@ -1,8 +1,13 @@
+import { Outlet } from "react-router-dom";
 
 
 const Nav = () => {
     return (
-        <nav>Nav</nav>
+        <>
+            <nav>Esto es un NavBar</nav>
+            <h1>Mi lista de tareas</h1>
+            <Outlet />
+        </>
     )
 }
 
