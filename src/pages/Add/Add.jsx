@@ -1,22 +1,21 @@
 import { useForm } from "react-hook-form";
 import Button from "../../components/Button/Button";
 import { createTask } from "../../services/todos-sevices";
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Add = () => {
     const { register, handleSubmit } = useForm();
-    const [goToHome, setGoToHome] = useState(false);
-    if (goToHome) return <Navigate to="/" />;
+    const navigate = useNavigate();
 
-    return goToHome ? <Navigate to="/" /> :
+    return (
         <>
             <h2>Añadiendo Tarea</h2>
-            <form onSubmit={handleSubmit(newTask => createTask(newTask).then(() => setGoToHome(true)))}>
+            <form onSubmit={handleSubmit(newTask => createTask(newTask).then(() => navigate("/")))}>
                 <input {...register("name", { required: true })} type="text" placeholder="Nueva tarea" />
                 <Button type="submit">Agregar</Button>
             </form>
         </>
+    )
 
 }
 

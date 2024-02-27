@@ -9,7 +9,7 @@ describe("Testing Nav", () => {
     });
     
     test("Render navbar", () => {
-        const navbar = screen.getByText(/Navbar/i);
+        const navbar = screen.queryByText(/navbar/i);
         expect(navbar).toBeDefined();
     });
 

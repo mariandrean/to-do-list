@@ -22,7 +22,8 @@ export const deleteTask = async (id) => {
     if (confirm("¿Estás seguro que quieres eliminar?") === true) {
         const response = await axios.delete(`http://localhost:8000/todos/${id}`, { method: "DELETE" });
         const data = await response.data;
-        alert(`Tarea eliminada: ${data.name}`);
+//        alert(`Tarea eliminada: ${data.name}`);
+        window.location.reload();
         return data;
     }
 }
