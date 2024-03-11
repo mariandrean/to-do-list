@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "name": "Lavar la ropa",
+      "name": "Barrer",
       "id": "1"
     },
     {
@@ -11,6 +11,10 @@
     {
       "name": "Barrer y Trapear",
       "id": "8766"
+    },
+    {
+      "id": "8766",
+      "name": "Barrer"
     }
   ]
 }
