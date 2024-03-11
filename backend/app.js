@@ -13,7 +13,6 @@ try {
 }
 
 // Sincronizar el modelo con la base de datos
-
 try {
   await TaskModel.sync();
   //await TaskModel.sync({force: true}); // Elimina el modelo anterior y crea uno nuevo
