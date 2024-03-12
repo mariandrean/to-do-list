@@ -11,6 +11,15 @@ export const getTasks = async (request, response) => {
     }
 }
 
+export const getOneTask = async (request, response) => {
+    try {
+        const task = await TaskModel.findOne({ where: { id: request.params.id } })
+        response.status(200).json(task);
+    } catch (error) {
+        response.status(500).json({ message: error.message })
+    }
+}
+
 export const createTask = async (request, response) => {
     const errors = validationResult(request);
     if (errors.isEmpty()) {
