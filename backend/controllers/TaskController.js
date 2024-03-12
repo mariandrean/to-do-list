@@ -21,17 +21,13 @@ export const getOneTask = async (request, response) => {
 }
 
 export const createTask = async (request, response) => {
-    const errors = validationResult(request);
-    if (errors.isEmpty()) {
-        try {
-            const newTask = await TaskModel.create(request.body);
-            return response.status(201).json(newTask);
-        }
-        catch (error) {
-            return response.status(500).json({ message: error.message })
-        }
+    try {
+        const newTask = await TaskModel.create(request.body);
+        return response.status(201).json(newTask);
     }
-    response.status(422).json({errors: errors.array()})
+    catch (error) {
+        return response.status(500).json({ message: error.message })
+    }
 }
 
 export const deleteTask = async (request, response) => {
@@ -41,5 +37,16 @@ export const deleteTask = async (request, response) => {
         response.status(200).json(task);
     } catch (error) {
         response.status(500).json({ message: error.message })
+    }
+}
+
+export const updateTask = async (request, response) => {
+    try {
+        await TaskModel.update(request.body, { where: { id: request.params.id } });
+        const task = await TaskModel.findOne({ where: { id: request.params.id } })
+        return response.status(200).json(task);
+    }
+    catch (error) {
+        return response.status(500).json({ message: error.message })
     }
 }

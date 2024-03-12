@@ -1,5 +1,5 @@
 import express from "express";
-import { createTask, deleteTask, getOneTask, getTasks } from "../controllers/TaskController.js"
+import { createTask, deleteTask, getOneTask, getTasks, updateTask } from "../controllers/TaskController.js"
 import { TaskValidator } from "../validators/TaskValidator.js";
 
 const TaskRouter = express.Router();
@@ -7,7 +7,8 @@ const TaskRouter = express.Router();
 TaskRouter.get("/", getTasks);
 TaskRouter.get("/:id", getOneTask);
 TaskRouter.post("/", TaskValidator, createTask);
-/* TaskRouter.delete("/:id", param("id", "does not exist").custom(id => findTaskbyId(id)), deleteTask) */
+TaskRouter.put("/:id", TaskValidator, updateTask);
+TaskRouter.delete("/:id", deleteTask)
 
 export default TaskRouter;
 
