@@ -14,13 +14,11 @@ try {
 
 // Sincronizar el modelo con la base de datos
 try {
-  await TaskModel.sync();
-  //await TaskModel.sync({force: true}); // Elimina el modelo anterior y crea uno nuevo
+  await TaskModel.sync(); //await TaskModel.sync({force: true}); // Elimina el modelo anterior y crea uno nuevo
   console.log(chalk.green('✅ Model and database synchronized correctly\n'));
 } catch (error) {
   console.error('❌ Synchronization error:', error);
 }
-
 
 const app = express();
 app.use(express.json());
