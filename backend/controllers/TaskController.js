@@ -1,4 +1,3 @@
-import { validationResult } from "express-validator";
 import TaskModel from "../models/TaskModel.js"
 
 export const getAllTasks = async (request, response) => {

@@ -10,7 +10,7 @@ const Add = () => {
     return (
         <>
             <h2>Añadiendo Tarea</h2>
-            <form onSubmit={handleSubmit(newTask => createTask(newTask).then(() => navigate("/")))}>
+            <form onSubmit={handleSubmit(newTask => createTask(newTask).then((result) => result && navigate("/")))}>
                 <input {...register("name", { required: true })} type="text" placeholder="Nueva tarea" />
                 <Button type="submit">Agregar</Button>
             </form>

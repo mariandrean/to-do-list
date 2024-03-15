@@ -6,9 +6,9 @@ export const validateCreateTask = [
     check("name")
         .notEmpty().withMessage("name cannot be null")
         .custom(async name => {
-            const task = await TaskModel.findOne({where: {name: name}});
+            const task = await TaskModel.findOne({ where: { name: name } });
             if (task) {
-                throw new Error('already exists');
+                throw new Error('task name already exists');
             }
         }),
 
