@@ -6,11 +6,13 @@ import { getToDoList } from "../services/todos-sevices.js";
 import Add from "../pages/Add/Add.jsx";
 import Edit from "../pages/Edit/Edit.jsx";
 import Nav from "../components/Nav/Nav.jsx";
+import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Nav/>,
+    element: <Nav />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: "/",
@@ -38,23 +40,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-
-/* import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-function AppRoutes() {
-  return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="home" element={<Home />} />
-          <Route path="about" element={<About/>} />
-          <Route path="contact" element={<Contact/>} />
-        </Routes>
-      </Router>
-    </div>
-  );
-}
-
-export default AppRoutes; */
 

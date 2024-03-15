@@ -11,7 +11,7 @@ const Card = ({ toDo }) => {
         <li id={id} className="card">
             <h3>{name}</h3>
             <Button onClick={() => navigate(`/edit/${id}`)}>Modificar</Button>
-            <Button onClick={() => deleteTask(id)}>Eliminar</Button>
+            <Button onClick={() => deleteTask(id).then((result) => result && navigate("/"))}>Eliminar</Button>
         </li>
     )
     
