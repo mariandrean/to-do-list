@@ -1,7 +1,7 @@
 import { validationResult } from "express-validator";
 import TaskModel from "../models/TaskModel.js"
 
-export const getTasks = async (request, response) => {
+export const getAllTasks = async (request, response) => {
     try {
         const tasks = await TaskModel.findAll();
         response.status(200).json(tasks);
