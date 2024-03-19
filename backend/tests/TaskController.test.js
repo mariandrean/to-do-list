@@ -1,4 +1,4 @@
-import { app, server } from '../app';
+import { app } from '../app';
 import request from 'supertest'
 import TaskModel from '../models/TaskModel';
 import connection_db from '../database/connection_db';
@@ -12,7 +12,6 @@ describe('testing CRUD', () => {
     afterAll(async () => {
         await TaskModel.destroy({where: {name: "test"}});
         await connection_db.close();
-        server.close();
     });
     
     test('Response body must be an array and show 200 status', async() => {
